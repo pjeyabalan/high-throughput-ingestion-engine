@@ -100,7 +100,7 @@
         🏛️ Architecture & 3 Protective Shields
       </button>
       <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 whitespace-nowrap">
-        🗺️ 3-Month Dual-Track Roadmap
+        🗺️ 4-Month Tri-Track Roadmap
       </button>
       <button onclick="switchTab('tab-interview')" id="btn-tab-interview" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 whitespace-nowrap">
         🎯 FDE & AI Interview Flashcards
@@ -240,31 +240,45 @@ llm_gateway_requests_total{status="throttled"} 0
       </div>
     </section>
 
-    <!-- TAB 3: 3-MONTH ROADMAP -->
+    <!-- TAB 3: 4-MONTH ROADMAP -->
     <section id="tab-roadmap" class="hidden space-y-6">
       <div class="glass-panel rounded-xl p-8 border border-gray-800">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-2">
-          <h2 class="text-xl font-bold text-white">90-Day Tri-Track Master Plan (Lead Java, FDE & Applied AI)</h2>
+          <h2 class="text-xl font-bold text-white">4-Month (16-Week) Tri-Track Master Plan</h2>
           <span class="text-xs bg-emerald-950 text-emerald-400 px-2.5 py-1 rounded font-mono border border-emerald-800">
-            Targeting: Capital One • Palantir • Databricks • Goldman Sachs
+            Lead Java • Forward Deployed (FDE) • Applied AI Platform
           </span>
         </div>
-        <p class="text-sm text-gray-400 mb-6">
-          Systematic weekly progression integrating the top 15 verified real-world Java & Distributed Systems interview questions 
-          (Amazon, Google, Microsoft, Goldman Sachs, Morgan Stanley, Capital One, PayPal, Uber).
+        <p class="text-sm text-gray-400 mb-4">
+          Structured 16-week progression integrating the top 15 verified real-world interview questions 
+          (Amazon, Google, Microsoft, Goldman Sachs, Morgan Stanley, Capital One, PayPal, Uber, Palantir).
         </p>
+
+        <!-- Daily Cadence Banner -->
+        <div class="bg-gray-950/80 p-4 rounded-lg border border-emerald-900/40 mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs font-mono text-emerald-400 font-bold block mb-1">⏱️ Daily Commitment Cadence (~12 Hours / Week):</span>
+            <p class="text-xs text-gray-300">
+              <span class="font-bold text-white">Weekdays (90m/day):</span> 25m Concept & STAR Verbalization • 50m Hands-on Coding & Tests • 15m Git Commit<br>
+              <span class="font-bold text-white">Weekends (2.5–3h/day):</span> Saturday JMH Benchmarks & Stress Tests • Sunday LinkedIn Post & 30m Mock Interview
+            </p>
+          </div>
+          <span class="whitespace-nowrap px-3 py-1.5 rounded text-xs font-mono bg-emerald-950 text-emerald-300 border border-emerald-800 font-semibold">
+            Zero-Burnout Pace
+          </span>
+        </div>
 
         <!-- Top Repeated Questions Badge Bar -->
         <div class="bg-gray-950/70 p-4 rounded-lg border border-gray-800 mb-6 text-xs text-gray-300">
           <span class="font-bold text-white block mb-2 font-mono">🔥 Top Real-World Interview Questions Mastered in this Track:</span>
           <div class="flex flex-wrap gap-2 font-mono text-[11px]">
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">1. LRU Cache from scratch (Capital One/PayPal)</span>
-            <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">2. Rate Limiter (Atlassian/Uber/Stripe)</span>
+            <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">2. Token-Bucket Rate Limiter (Atlassian/Uber/Stripe)</span>
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">3. Thread-Safe Singleton (Goldman/Walmart)</span>
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">4. ConcurrentHashMap TreeBins (PayPal/Goldman)</span>
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">5. Custom BlockingQueue (Microsoft/JPMorgan)</span>
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">6. volatile vs synchronized CPU cache (Microsoft)</span>
-            <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">7. Circuit Breaker LLD (Uber/PayPal)</span>
+            <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">7. External Sort 100GB with 2GB RAM (Visa/Goldman)</span>
             <span class="bg-gray-900 px-2 py-0.5 rounded border border-gray-800">8. Distributed Saga Pattern (TransUnion/Discover)</span>
           </div>
         </div>
@@ -276,15 +290,15 @@ llm_gateway_requests_total{status="throttled"} 0
               <span class="text-xs font-mono text-emerald-400 font-bold uppercase">Month 1 • Weeks 01–04</span>
               <span class="text-xs bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">IN PROGRESS (Week 1 Active)</span>
             </div>
-            <h3 class="text-base font-bold text-white mb-2">High-Throughput Distributed Data & Vector Lakehouses</h3>
+            <h3 class="text-base font-bold text-white mb-2">Core Java 21 Concurrency, Data Structures & High-Throughput Ingestion</h3>
             <p class="text-xs text-gray-400 mb-3">
-              Repos: <code class="text-gray-300">high-throughput-ingestion-engine</code> & <code class="text-gray-300">distributed-spark-vector-loader</code>
+              Repo: <code class="text-gray-300">high-throughput-ingestion-engine</code> (Java 21, Zero Dependencies)
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs font-mono text-gray-300">
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">✅ W1: Bounded Ingestion & TokenBucket</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W2: JVM Tuning & ZGC Profiling</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W3: Spark 3.5 Core & Partitioning</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W4: pgvector Parallel Bulk Loading</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800 text-emerald-400">✅ W1: Bounded Ingestion & LRU Cache</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W2: Singletons & ConcurrentHashMap</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W3: Custom BlockingQueue & CircuitBreaker</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W4: JMM, volatile & CPU Cache Coherence</div>
             </div>
           </div>
 
@@ -294,33 +308,51 @@ llm_gateway_requests_total{status="throttled"} 0
               <span class="text-xs font-mono text-cyan-400 font-bold uppercase">Month 2 • Weeks 05–08</span>
               <span class="text-xs bg-gray-900 text-gray-400 px-2 py-0.5 rounded border border-gray-800">UPCOMING</span>
             </div>
-            <h3 class="text-base font-bold text-white mb-2">Advanced Applied AI — Production RAG, Evals & Security Guardrails</h3>
+            <h3 class="text-base font-bold text-white mb-2">Distributed Data Pipelines (FDE) & Apache Spark Vector Lakehouses</h3>
             <p class="text-xs text-gray-400 mb-3">
-              Repo: <code class="text-gray-300">enterprise-financial-rag-evals</code>
+              Repo: <code class="text-gray-300">distributed-spark-vector-loader</code> (Spark 3.5, pgvector, Testcontainers)
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs font-mono text-gray-300">
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W5: Layout-Aware Chunking (10-K)</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W6: Hybrid Search with RRF</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W7: In-Perimeter PII Vault</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W8: Automated CI Ragas Gates</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W5: Spark Lifecycle & External Sort</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W6: Parallel JDBC & Top-K Streaming</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W7: Non-Invasive CDC & Interval Union</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W8: Bulk pgvector HNSW Ingestion</div>
             </div>
           </div>
 
           <!-- Month 3 -->
           <div class="bg-gray-950 p-5 rounded-lg border border-gray-800">
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-amber-400 font-bold uppercase">Month 3 • Weeks 09–12</span>
+              <span class="text-xs font-mono text-violet-400 font-bold uppercase">Month 3 • Weeks 09–12</span>
               <span class="text-xs bg-gray-900 text-gray-400 px-2 py-0.5 rounded border border-gray-800">UPCOMING</span>
             </div>
-            <h3 class="text-base font-bold text-white mb-2">Agentic Systems (MCP), Enterprise Integrations & Interview Domination</h3>
+            <h3 class="text-base font-bold text-white mb-2">Production Applied AI — Advanced RAG, Evals & Security Guardrails</h3>
             <p class="text-xs text-gray-400 mb-3">
-              Repo: <code class="text-gray-300">agentic-integration-broker-mcp</code>
+              Repo: <code class="text-gray-300">enterprise-financial-rag-evals</code> (FastAPI, pgvector, Ragas)
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs font-mono text-gray-300">
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W9: Stateful ReAct Loops (LangGraph)</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W10: Model Context Protocol (MCP)</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W11: Human-in-the-Loop Gates</div>
-              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W12: Interview Loops & Portfolio Launch</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W9: Layout-Aware Chunking (10-K) & Trie</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W10: Hybrid Search (BM25 + HNSW) RRF</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W11: In-Perimeter PII Tokenization Vault</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W12: Automated CI Ragas Gates (<90% Fail)</div>
+            </div>
+          </div>
+
+          <!-- Month 4 -->
+          <div class="bg-gray-950 p-5 rounded-lg border border-gray-800">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">Month 4 • Weeks 13–16</span>
+              <span class="text-xs bg-gray-900 text-gray-400 px-2 py-0.5 rounded border border-gray-800">UPCOMING</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Agentic Systems (MCP), Distributed Sagas & Hiring Loop Mastery</h3>
+            <p class="text-xs text-gray-400 mb-3">
+              Repo: <code class="text-gray-300">agentic-integration-broker-mcp</code> (LangGraph / Go / Java, MCP Server, HITL)
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs font-mono text-gray-300">
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W13: Stateful ReAct Loops & Saga Pattern</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W14: Model Context Protocol (MCP Server)</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W15: Human-in-the-Loop & 4-Wk POC Scoping</div>
+              <div class="bg-gray-900 p-2 rounded border border-gray-800">⏳ W16: Live Coding Loops & Portfolio Launch</div>
             </div>
           </div>
         </div>
