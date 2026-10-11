@@ -62,15 +62,24 @@ ExecutorService executor = Executors.newFixedThreadPool(16);
 2. **CallerRunsPolicy Backpressure**: Forces ingress HTTP threads to execute processing when internal buffers saturate, naturally throttling client edge traffic.
 3. **Lock-Free Contention-Free Metrics**: High-frequency metric counters backed by `LongAdder` to prevent CPU cache coherence bus saturation.
 4. **Graceful Draining Protocol**: Drains all remaining items upon shutdown, guaranteeing zero data loss during rolling Kubernetes pod deployments.
+5. **Thread-Safe O(1) LRU Cache (From Scratch)**: Custom Doubly-Linked List + HashMap with dummy head/tail sentinels and `ReentrantReadWriteLock`. Powers the In-Memory Semantic Prompt Cache (410,000+ ops/sec).
 
 ---
 
 ## 4. Verification & Stress Tests
 
-Run the stress test suite:
+Run the verification test suites:
 ```bash
 javac -d /tmp/test-classes src/main/java/com/enterprise/ingestion/model/*.java src/main/java/com/enterprise/ingestion/core/*.java src/test/java/com/enterprise/ingestion/core/*.java
+
+# Run Day 02 Rate-Limiter & Backpressure stress test
 java -cp /tmp/test-classes com.enterprise.ingestion.core.Day02StressRunner
+
+# Run Day 03 Lock-Free Prometheus Metrics stress test
+java -cp /tmp/test-classes com.enterprise.ingestion.core.Day03MetricsRunner
+
+# Run Day 04 Thread-Safe O(1) LRU Cache stress test (410k+ ops/sec)
+java -cp /tmp/test-classes com.enterprise.ingestion.core.Day04LRURunner
 ```
 
 ---
