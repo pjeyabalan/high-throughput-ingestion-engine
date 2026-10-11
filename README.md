@@ -63,6 +63,7 @@ ExecutorService executor = Executors.newFixedThreadPool(16);
 3. **Lock-Free Contention-Free Metrics**: High-frequency metric counters backed by `LongAdder` to prevent CPU cache coherence bus saturation.
 4. **Graceful Draining Protocol**: Drains all remaining items upon shutdown, guaranteeing zero data loss during rolling Kubernetes pod deployments.
 5. **Thread-Safe O(1) LRU Cache (From Scratch)**: Custom Doubly-Linked List + HashMap with dummy head/tail sentinels and `ReentrantReadWriteLock`. Powers the In-Memory Semantic Prompt Cache (410,000+ ops/sec).
+6. **Multi-Vector Fortified Singleton**: Double-Checked Locking with `volatile` instruction fencing, `localRef` register caching, reflection constructor guard, serialization `readResolve` hook, cloning defense, and Enum alternative (12M+ ops/sec).
 
 ---
 
@@ -70,7 +71,7 @@ ExecutorService executor = Executors.newFixedThreadPool(16);
 
 Run the verification test suites:
 ```bash
-javac -d /tmp/test-classes src/main/java/com/enterprise/ingestion/model/*.java src/main/java/com/enterprise/ingestion/core/*.java src/test/java/com/enterprise/ingestion/core/*.java
+javac -d /tmp/test-classes src/main/java/com/enterprise/ingestion/model/*.java src/main/java/com/enterprise/ingestion/core/*.java src/test/java/com/enterprise/ingestion/core/Day0*.java
 
 # Run Day 02 Rate-Limiter & Backpressure stress test
 java -cp /tmp/test-classes com.enterprise.ingestion.core.Day02StressRunner
@@ -80,6 +81,9 @@ java -cp /tmp/test-classes com.enterprise.ingestion.core.Day03MetricsRunner
 
 # Run Day 04 Thread-Safe O(1) LRU Cache stress test (410k+ ops/sec)
 java -cp /tmp/test-classes com.enterprise.ingestion.core.Day04LRURunner
+
+# Run Day 05 Thread-Safe Singleton & Multi-Vector Attack Runner (12M+ ops/sec)
+java -cp /tmp/test-classes com.enterprise.ingestion.core.Day05SingletonRunner
 ```
 
 ---
